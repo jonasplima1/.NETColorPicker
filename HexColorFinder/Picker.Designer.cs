@@ -1,7 +1,4 @@
-﻿
-using System.Drawing;
-
-namespace ColorPicker
+﻿namespace ColorPicker
 {
     partial class Picker
     {

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ColorPicker
@@ -33,7 +27,7 @@ namespace ColorPicker
         private void txtBox_TextChanged(object sender, EventArgs e)
         {
             //Update the value on the textbox to picked HEX
-            var hex = this.txtBox.Text;
+            var hex = this.txtHEX.Text;
             ChangeColor(hex);
         }
 

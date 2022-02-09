@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ColorPicker
@@ -66,8 +60,10 @@ namespace ColorPicker
             Color myColor = Color.FromArgb(c.R, c.G, c.B);
             //Convert Color RGB value to HAX
             string hex = myColor.R.ToString("X2") + myColor.G.ToString("X2") + myColor.B.ToString("X2");
+            //Set RGB string
+            string rgb = c.R + "," + c.G + "," + c.B;
             //Calls the method to set label
-            SetLabel(hex);
+            SetLabel(hex, rgb);
         }
 
         //Generates a small bitmap 1x1 pixel
@@ -90,9 +86,10 @@ namespace ColorPicker
             return screenPixel.GetPixel(0, 0);
         }
 
-        private void SetLabel (string hex)
+        private void SetLabel(string hex, string rgb)
         {
-            ParentForm.txtBox.Text = "#" + hex;
+            ParentForm.txtHEX.Text = "#" + hex;
+            ParentForm.txtRGB.Text = rgb;
         }
     }
 }
